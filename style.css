@@ -1,0 +1,344 @@
+/*
+ * Add your CSS styles to this file.
+ */
+
+
+ /* brah safari WACK (note to self: check on firefox or chrome) */
+
+
+html
+{
+    font-family: 'Roboto', sans-serif; 
+
+}
+
+
+/* any link in html, these changes will apply (UNLESS i do something that has higher specificity i think) */
+a
+{
+    /* was looking at this: https://stackoverflow.com/questions/2789703/remove-blue-underline-from-link */
+    text-decoration: none; /* applies to tweeter, navbar links, names */
+
+    /* affects color for navbar links and names BUT NOT header */
+    color: rgb(57, 57, 73);
+    
+}
+
+/* applies for all the profile names ONLY */
+a:hover
+{
+    color: rgb(98, 156, 233);
+}
+
+body
+{
+    /* ahhh, that fixes the space around the whole viewports */
+    /* https://stackoverflow.com/questions/45232945/how-can-i-make-my-banner-span-the-whole-width-of-the-site */
+    /* https://stackoverflow.com/questions/21358066/header-not-full-width-html-css */
+    /* https://stackoverflow.com/questions/18772154/white-space-at-top-of-page */
+    margin: 0px;
+    padding: 0px;
+
+    /* ayo?? https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend */
+    /* this too: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x */
+    overflow-x: hidden;
+
+    /* 
+    width: 100%;
+    height: 100%; 
+    */
+}
+
+
+/* \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ */
+
+
+header
+{
+    /* ENDED UP NOT PUTTING STUFF UNDER "header" element selector */
+    /* WHAAAAAAA IT WORK NOW BRUHHHHHHHHHHHHHH LOL */
+    background-color: rgb(80, 156, 239);
+}
+
+
+
+/* applies to header and then navbar links */
+header a 
+{
+    /* yooo??? https://stackoverflow.com/questions/58034800/how-to-reduce-clickable-area-of-links-in-css 
+    /* OKAY SO THE NEXT LINE CHANGES SO LINK IS ONLY WIDTH OF TEXT BUT THE BACKGROUND COLOR GOES AWAY FOR REST... :/ */
+    /* UPDATE: NOT SURE WHAT I DID SINCE THEN BUT IT DOESN'T OVERFLOW OR NOTHING THAT I WASN'T EXPECTING HAPPENS ANYMORE */
+    display: inline-block; 
+
+}
+
+
+/* ".site-title" OR "header a h1" seems to work too. if I just have "header", it becomes wonky LOL */
+.site-title
+{
+    background-color: rgb(80, 156, 239);   /* why there still white space around tho.. 😩 😩 😩. UPDATE: no more! */
+    color: rgb(240, 254, 255);
+    width: 100%; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 25px;   /* ayy this fix teehee */
+    padding-top: 10px;    /* ope, just added this and the next line on a whim */
+    padding-bottom: 10px; /* looks like it helps so ig keep it for now...  */
+    font-weight: 400;     /* ❌ ❌ ❌ ❌ ❌ ❌ ❌ */ /* TRY SEE WHAT VALUE TO GIVE IT LOL . the next line too */
+    font-size: 1.5em; 
+
+}
+
+/* \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ */
+
+
+.navbar
+{   
+
+    background-color: rgb(255, 255, 255); 
+    padding-left: 15px; 
+    margin: 1px 0px 1px 0px;
+
+    /* margin-left: 30px; */
+    /* width: 100%; /* why is this here as well idk LOL */
+
+
+}
+
+
+.navlist
+{
+    list-style-type: none; /* reminder: takes the bullet points out */
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.navitem
+{
+
+    display: inline-block; /* reminder: inline-block is what makes the navbar links line up horizontally */
+    margin: 0px 10px 0px 10px; 
+    background-color: rgb(255, 255, 255); 
+    /* referenced for extending length of border: https://stackoverflow.com/questions/15371856/extend-length-of-border-css */
+    padding: 7px;
+
+}
+
+/* .navitem.navlink.active */
+.active
+{
+
+    /* referenced for underline: https://www.w3schools.com/howto/howto_css_navbar_border.asp */
+    border-bottom: 3px solid rgb(86, 146, 200);
+    
+}
+
+
+
+.navlink a:hover
+{
+    color: rgb(98, 156, 233);
+}
+
+.navbar-search
+{
+    float: right;
+    /* found out why the following doesn't work: https://stackoverflow.com/questions/5013683/css-float-and-padding */
+    /* OPE NVM LOL. forgot to put the "px" */
+    padding-right: 10px; 
+    /* padding or margin changes seem to do similar things but just leave as one or the other for now ig */
+    /* margin-right: 25px; */
+
+}
+
+/* referenced these for "input" and "input:focus": 
+   https://developer.mozilla.org/en-US/docs/Web/CSS/:focus 
+   https://css-tricks.com/almanac/selectors/f/focus/ */
+input
+{
+    background: rgb(238, 238, 238);
+}
+
+input:focus
+{
+    background: rgb(255, 255, 255);
+}
+
+
+#navbar-search-button
+{
+    /* referenced some code snippet from here: https://stackoverflow.com/questions/11497094/remove-border-from-buttons */
+    border: none;
+    background: none;   
+    /* referenced something from here: https://www.w3schools.com/howto/howto_css_block_buttons.asp */
+    font-size: 16px;
+}
+
+#navbar-search-button:hover
+{
+    /* referenced for cursor https://stackoverflow.com/questions/3087975/how-to-change-the-cursor-into-a-hand-when-a-user-hovers-over-a-list-item */
+    color: rgb(98, 156, 233);
+    cursor: pointer;
+}
+
+/* \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ */
+
+
+
+
+main
+{
+    background-color: rgb(238, 238, 238);
+
+    margin: 0; /* still get space between bottom of nav bar and start of main 😩 😩 😩 */
+}
+
+
+
+/* \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ */
+
+
+
+
+/* THE TWIT BEGINS HERE */
+/* was just messing around with the below so can take out as needed... */
+/* yo??? https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
+.twit-container
+{
+    /* these three lines seemed to fix things?? LOL. update just the first one seems like it helps */
+    min-height: 500px;
+    /* the padding-left OR margin-left below works when in full screen but kinda yuck once you start to resize 😩 😩 😩 */
+    /* padding-left: 150px; */
+    /* margin-left: 150px; */
+
+
+    /* ❌ ❌ ❌ ❌ ❌ ❌ ❌ */
+    /* not sure (as of now) how to change it so that the last row when full size goes to the left instead of center 😩 😩 😩 */
+
+    /* reminder from MDN: 'display: flex' makes any children of container flex items automatically */
+    display: flex;            /* cherreh */
+    flex-wrap: wrap;          /* cherreh */ 
+    flex-direction: row;      /* cherreh */
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
+    /* if flex-direction is set to 'row': */
+    /* align-items -> cross axis or vertically */
+    /* justify-content -> main axis of horizontally */
+    align-items: center;      /* ayo? */ 
+    /* if this is changed to flex-start OR stretch, columns are like in mock but pushed to left side 😩 */
+    justify-content: center;  /* ayo? */ 
+    
+    /* found this here: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
+    align-content: center;    /* ayo? */
+
+
+    /* 🔥 🔥 YOO??? LOOKS LIKE "GAP" here in .twit-container CAN BE REPLACED WITH "margin" IN .twit 🔥 🔥 */
+    gap: 3px 3px; /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ used for lots of flexbox related stuff */
+
+}
+
+
+.twit
+{
+    border: solid rgb(223, 223, 223);
+    /* yo!: https://www.w3schools.com/cssref/pr_border-width.asp */
+    border-width: thin; 
+    background-color: rgb(255, 255, 255);
+
+    /* ❌ ❌ ❌ ❌ ❌ ❌ ❌ */
+    /* SEE IF I SHOULD KEEP THIS, WHERE I SET THE HEIGHT AND WIDTH OF EACH FLEX ITEM... */
+    height: 115px;
+    width: 375px;
+
+    /* 🔥 🔥 YOO??? LOOKS LIKE "margin" here in .twit CAN BE REPLACED WITH "gap" IN .twit-container 🔥 🔥 */
+    /* margin: 2px; */
+
+
+    /* flex-grow: 1; */
+
+}
+
+.twit-icon
+{
+    /* was searching for something and then tried out something that looks like it fixed things??
+       https://stackoverflow.com/questions/17217766/two-divs-side-by-side-fluid-display */
+    float: left;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 15px;
+
+    /* referenced to change size of icon: https://stackoverflow.com/questions/14482249/setting-size-for-icon-in-css */
+    font-size: 25px;
+
+}
+
+/*
+.twit-content
+{
+    /* ENDED UP NOT PUTTING STUFF FOR twit-content CLASS SELECTOR 
+}
+*/
+
+
+.twit-author
+{
+    /* ❌ ❌ ❌ ❌ ❌ ❌ ❌ */
+    /* not as bold as I hope so figure out how to change so it is bolder */
+    /* bruh, it looks different across chrome, firefox, and safari 😩 😩 😩 */
+    font-weight: 700;
+    float: right;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ \\\\\ */
+
+
+#create-twit-button
+{
+    /* referenced: https://stackoverflow.com/questions/38320878/circle-button-css */
+
+    position: fixed; /* cherreh */
+    bottom: 25px;    /* cherreh */
+    right: 25px;     /* cherreh */
+
+    height: 60px;
+    width: 60px;
+
+    font-size: 1.8em;
+    color: rgb(255, 255, 255);
+
+
+    background-color: rgb(215, 31, 56);
+
+    border-radius: 50%;
+    border: 1px solid rgb(215, 31, 56);
+
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); /* referenced: https://stackoverflow.com/questions/6378518/show-only-right-and-bottom-parts-of-a-shadow */
+
+    /* referenced for the grow from center part: https://stackoverflow.com/questions/7897208/grow-from-center */
+    transform: scale(1);
+}
+
+#create-twit-button:hover
+{
+
+    cursor: pointer;
+
+    position: fixed; /* cherreh */
+    bottom: 25px;    /* cherreh */
+    right: 25px;     /* cherreh */
+
+
+    font-size: 2em;
+    background-color: rgb(83, 153, 217); 
+    border-radius: 50%;
+    border: 1px solid rgb(83, 153, 217);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+    transform: scale(1.1);
+
+}
